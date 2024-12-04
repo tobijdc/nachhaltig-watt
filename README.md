@@ -1,7 +1,7 @@
 # Nachhalting Watt  🌱⚡
 
 Experimental Firefox Browser Extension.
-Adds ["Stromanbieter Check"](https://www.wwf.at/stromanbietercheck/) Sustainability data to
+Currently, adds ["Stromanbieter Check"](https://www.wwf.at/stromanbietercheck/) result data to
 the Austrian [E-Control price comparison Website](https://www.e-control.at/tarifkalkulator#).
 
 ## Background
@@ -29,6 +29,7 @@ which scores companies for their (very broad) sustainability practices.
 
 ## Still to do
 
+ - [x] display "Stromanbieter Check" data
  - [x] does not break when switching to smaller viewports
  - [ ] works on smaller viewports
  - [ ] add  how much electricity was bought together with certificates
