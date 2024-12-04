@@ -31,30 +31,29 @@ function addSustainabilityColumn() {
     if (isUpdating) return; // Avoid simultaneous executions
     isUpdating = true;
     observer.disconnect()
-
-    const tables = document.querySelectorAll(".rc-rating-table");
+    const rootOfInterest = document.querySelector(".rc-rating-area");
+    const tables = rootOfInterest?.querySelectorAll(".rc-rating-table");
     try {
-        if (tables.length > 0) {
+        if (tables?.length > 0) {
             const tableHeader = tables[0]; // Assume header is in the first table
             const tableBody = tables[1];  // Assume body is in the second table
 
             const headerRows = tableHeader.querySelectorAll("tr");
             const bodyRows = tableBody.querySelectorAll("tr");
 
-            if (headerRows.length > 0) {
+            if (headerRows?.length > 0) {
                 const firstRow = headerRows[0];
                 const sustainabilityColumn = firstRow.querySelector("#nachhaltig-watt-header");
 
                 if (sustainabilityColumn) {
                     sustainabilityColumn.remove();
                     tableBody.querySelectorAll(".nachhaltig-watt-cell").forEach((cell) => {cell.remove()})
-                    //deleteLastColumn(bodyRows);
                 }
 
                 // Add a header for the new column
                 const header = firstRow.insertCell(-1);
-                header.id = "nachhaltig-watt-header"; // Unique ID
-                header.textContent = "Stromanbieter-Check 23";
+                header.id = "nachhaltig-watt-header"; // Unique
+                header.textContent = "Stromanbieter-Check 25";
                 header.style.fontWeight = "bold";
 
                 bodyRows.forEach((row, index) => {
@@ -77,7 +76,7 @@ function addSustainabilityColumn() {
         }
     } finally {
         isUpdating = false;
-        observeTableForChanges(tables);
+        observeTableForChanges(rootOfInterest);
     }
 }
 
@@ -116,49 +115,51 @@ function categoryMapper(category) {
     switch (category) {
         case 1:
             return {
-                txt: "Leader",
-                col: "rgb(99, 255, 49)",
+                txt: "Exzellenter Grünstromanbieter",
+                //col: "rgb(99, 255, 49)",
+                col: "rgb(145, 200, 62)",
                 icon: "leaf"
             };
         case 2:
             return {
-                txt: "Solid",
-                col: "rgb(99, 170, 49)",
+                txt: "Solider Grünstromanbieter",
+                //col: "rgb(99, 170, 49)",
+                col: "rgb(29, 110, 127)",
                 icon: "leaf"
             };
         case 3:
             return {
-                txt: "Adapting",
+                txt: "Stromanbieter im Wandel",
                 col: "rgb(253, 199, 69)",
                 icon: "leaf"
             };
         case 4:
             return {
-                txt: "Provider with challenges",
+                txt: "Stromanbieter vor Herausforderungen",
                 col: "rgb(245, 166, 35)",
                 icon: "warning"
             };
         case 10:
             return {
-                txt: "Declined to Answer",
+                txt: "Nicht Teilgenommen (instransparent)",
                 col: "rgb(208, 2, 27)",
                 icon: "question"
             };
         case 99:
             return {
-                txt: "New/Not accessed",
+                txt: "Neu oder nicht erhoben",
                 col: "#0066a9",
                 icon: "question"
             };
         default:
             console.warn("Unknown category: ", category);
             return {
-                txt: "Error",
+                txt: "Fehler",
                 col: "#333333",
                 icon: "question"
             };
     }
 }
 
-observeTableForChanges(document.querySelectorAll(".rc-rating-table"));
+observeTableForChanges(document.querySelectorAll(".rc-rating-area"));
 addSustainabilityColumn();
