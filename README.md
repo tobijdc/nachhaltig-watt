@@ -8,7 +8,7 @@ the Austrian [E-Control price comparison Website](https://www.e-control.at/tarif
 
 ### 💡 Idea
 
-Consumers should have easy access to this Sustainability information, to make informed choices.
+Consumers should have easy access relevant Sustainability information, to make informed choices.
 
 ### Reasoning
 
