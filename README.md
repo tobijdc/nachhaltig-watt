@@ -30,12 +30,12 @@ which scores companies for their (very broad) sustainability practices.
 ## Still to do
 
  - [x] does not break when switching to smaller viewports
- - [] works on smaller viewports
- - [] add  how much electricity was bought together with certificates
- - [] add UZ46 indicator
- - [] map all (very) regional companies
- - [] proper extension releases
- - [] chrome version
- - [] i18n
- - [] expand to tarife.at
- - [] expand to durchblicker.at
+ - [ ] works on smaller viewports
+ - [ ] add  how much electricity was bought together with certificates
+ - [ ] add UZ46 indicator
+ - [ ] map all (very) regional companies
+ - [ ] proper extension releases
+ - [ ] chrome version
+ - [ ] i18n
+ - [ ] expand to tarife.at
+ - [ ] expand to durchblicker.at
